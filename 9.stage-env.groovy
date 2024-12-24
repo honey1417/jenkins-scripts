@@ -2,15 +2,14 @@
 
 pipeline {
     agent any
-    // this env variables can be used across all the stages
+    //can be used across all the stages
     environment {
-        // Key value pairs
-        name = "Siva"
+        name = "honey"
         course = "k8s"
     }
     stages {
         stage ('Build') {
-            // these environment varibles are specific to this stage only
+            //specific to this stage only
             environment {
                 cloud = "GCP"
             }
@@ -22,20 +21,18 @@ pipeline {
         }
     }
 }
-//
-// This environment block can be used at pipeline level and stage level
 
+//to differentiate 
 pipeline {
     agent any
-    // this env variables can be used across all the stages
+    // can be used across all the stages
     environment {
-        // Key value pairs
-        name = "Siva"
+        name = "honey"
         course = "k8s"
     }
     stages {
         stage ('Build') {
-            // these environment varibles are specific to this stage only
+            //are specific to this stage only
             environment {
                 cloud = "GCP"
             }
@@ -55,22 +52,18 @@ pipeline {
     }
 }
 
-// Lets test presedence
-
+// Lets test precedence
 pipeline {
     agent any
-    // this env variables can be used across all the stages
     environment {
-        // Key value pairs
-        name = "Siva"
+        name = "honey"
         course = "k8s"
     }
     stages {
         stage ('Build') {
-            // these environment varibles are specific to this stage only
             environment {
                 cloud = "GCP"
-                name = "Maha"
+                name = "harshini"
             }
             steps {
                 echo "Welcome ${name}"
@@ -84,15 +77,12 @@ pipeline {
 // printenv
 pipeline {
     agent any
-    // this env variables can be used across all the stages
     environment {
-        // Key value pairs
         name = "Siva"
         course = "k8s"
     }
     stages {
         stage ('Build') {
-            // these environment varibles are specific to this stage only
             environment {
                 cloud = "GCP"
                 name = "Maha"
