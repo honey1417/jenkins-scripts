@@ -10,7 +10,7 @@ pipeline{
     stages {
         stage('ProdDeploy') {
             when {
-                environment name: 'DEPLOY_TO', value: 'other' 
+                environment name: 'DEPLOY_TO', value: 'production' 
             }
             steps {
                 echo "deploying to production"
@@ -21,8 +21,8 @@ pipeline{
 //when not condition
 pipeline{
     agent any
-    environment {
-
+    environment 
+    {
         DEPLOY_TO = 'production'
     }
     stages {

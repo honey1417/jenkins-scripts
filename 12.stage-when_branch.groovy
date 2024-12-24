@@ -1,3 +1,5 @@
+//based on the branch condition , i can create the pipeline
+
 pipeline {
     agent any
     environment {
@@ -13,7 +15,7 @@ pipeline {
             when {
                 expression 
                 {
-                    BRANCH_NAME ==~ /(redesign|hotfix)/
+                    BRANCH_NAME ==~ /(qrrelease|hotfix)/
                 }
             }
             steps {
